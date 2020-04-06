@@ -64,6 +64,46 @@ function removeDuplicates(string) {
 }
 
 // complexity O(n^2)
-console.log(removeDuplicates('google this is a test'));
+// console.log(removeDuplicates('google this is a test'));
 
 
+//drill 5
+// input string
+//output boolean
+
+
+function pal(string) {
+    let newMap = new HashMap()
+
+    for(let i = 0; i < string.length; i++) {
+        newMap.set(i, string[i])
+    }
+    
+    let curr = ''
+    let currVal = 0
+    let newNewMap = new HashMap()
+
+    for(let i = 0; i < string.length; i++) {
+        curr = string[i]
+        currVal = 0
+        for(let j = 0; j < newMap.length; j++) {
+            if(curr === newMap.get(j)) {
+                currVal += 1
+                newNewMap.set(curr, currVal)
+            }
+        }
+    } 
+    
+    let count = 0
+    for(let i = 0; i < string.length; i++) {
+        if(newNewMap.get(string[i]) % 2 !== 0) {
+            count += 1
+        }
+    }
+
+    return count > 1 ? false : true
+}
+
+console.log(pal('paul'))
+
+// set them all, count with string
