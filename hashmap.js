@@ -12,6 +12,7 @@ class HashMap {
             throw new Error('Key error');
         }
         return this._hashTable[index].value;
+        // removed .value
     }
 
     set(key, value){

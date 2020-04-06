@@ -27,7 +27,7 @@ function main() {
   console.log(lotr._capacity);
 }
 
-main();
+// main();
 
 
 
@@ -40,9 +40,27 @@ main();
 // drill 3
 
 // OPEN ADDRESSING
-const testArray = [22, 88, n2, 4, 15, 28, 17, 59, 31, 10, n10] 
+// const testArray = [22, 88, n2, 4, 15, 28, 17, 59, 31, 10, n10] 
 
 // SEPARATE CHAINING
 
-const testArray2 = [33, [12, 10], n2, 15, 5, [28, 17], n6, 19, 20] // modded by 11 instead of 9 by accident
+// const testArray2 = [33, [12, 10], n2, 15, 5, [28, 17], n6, 19, 20] // modded by 11 instead of 9 by accident
 
+function removeDuplicates(string) {
+    let newMap = new HashMap()
+    let newStr = ''
+    let curr = ''
+
+    for(let i = 0; i < string.length; i++) {
+        newMap.set(i, string[i])
+        curr = newMap.get(i)
+        if(!newStr.includes(curr)) {
+            newStr += curr
+        }
+    }
+
+    return newStr
+}
+
+// complexity O(n^2)
+console.log(removeDuplicates("google all that you think can think of"))
