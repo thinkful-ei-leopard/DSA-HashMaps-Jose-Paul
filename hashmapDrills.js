@@ -28,3 +28,10 @@ function main() {
 }
 
 main();
+
+
+
+// drill 2
+
+// retreiving values by their keys, 
+// although the keys have the same value, so the value of the key was replaced
