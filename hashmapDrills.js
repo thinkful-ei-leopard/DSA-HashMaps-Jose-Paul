@@ -19,7 +19,6 @@ function main() {
   lotr.set('test', 'testing');
   lotr.set('test2', 'testing2');
 
-
   console.log(lotr.get('Maiar'));
   console.log(lotr.get('Hobbit'));
   console.log(lotr.get('Ent'));
@@ -29,38 +28,42 @@ function main() {
 
 // main();
 
-
-
 // drill 2
 
-// retreiving values by their keys, 
+// retreiving values by their keys,
 // although the keys have the same value, so the value of the key was replaced
-
 
 // drill 3
 
 // OPEN ADDRESSING
-// const testArray = [22, 88, n2, 4, 15, 28, 17, 59, 31, 10, n10] 
+// const testArray = [22, 88, n2, 4, 15, 28, 17, 59, 31, 10, n10]
 
 // SEPARATE CHAINING
 
 // const testArray2 = [33, [12, 10], n2, 15, 5, [28, 17], n6, 19, 20] // modded by 11 instead of 9 by accident
 
 function removeDuplicates(string) {
-    let newMap = new HashMap()
-    let newStr = ''
-    let curr = ''
+  let newMap = new HashMap();
+  let newStr = '';
 
-    for(let i = 0; i < string.length; i++) {
-        newMap.set(i, string[i])
-        curr = newMap.get(i)
-        if(!newStr.includes(curr)) {
-            newStr += curr
-        }
+  // if character has not been added, add it. otherwise, leave it.
+
+  for (let i = 0; i < string.length; i++) {
+    let char = string[i];
+
+    try {
+      newMap.get(char);
+    } catch (error) {
+      getError = error;
+      newMap.set(char, char);
+      newStr += string[i];
     }
+  }
 
-    return newStr
+  return newStr; // ?
 }
 
 // complexity O(n^2)
-console.log(removeDuplicates("google all that you think can think of"))
+console.log(removeDuplicates('google this is a test'));
+
+
