@@ -68,14 +68,37 @@ console.log(removeDuplicates('google this is a test'));
 
 // PALINDROMES
 
+// loop over string, either adding char to hash table as a key or increment the count (value) if it is already in the table. characters = key, count = value
+// iterate through hash table to make sure char counts are all even or at most one value is odd.
+
 function palindrome(string) {
   let newMap = new HashMap();
+  let count = 1;
+  let charCount = {};
 
   for (let i = 0; i < string.length; i++) {
     let char = string[i];
-    newMap.set(char, char);
+    charCount[char] = charCount[char] + 1 || 1;
+
+    try {
+      newMap.get(char);
+      newMap[char] = charCount[char];
+    } catch (e) {
+      newMap.set(char, count);
+    }
   }
-  console.log(newMap)
+
+  let charCountArray = Object.values(charCount); // ?
+  let oddCount = 0;
+
+  for (let i = 0; i < charCountArray.length; i++) {
+    if (charCountArray[i] % 2 !== 0) {
+      oddCount++;
+    } else {
+      oddCount += 0;
+    }
+  }
+  return oddCount > 1 ? false : true;
 }
 
-console.log(palindrome('acecarr'));
+console.log(palindrome('aceacrr'));
