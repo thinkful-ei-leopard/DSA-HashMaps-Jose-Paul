@@ -101,4 +101,5 @@ function palindrome(string) {
   return oddCount > 1 ? false : true;
 }
 
+
 console.log(palindrome('aceacrr'));
