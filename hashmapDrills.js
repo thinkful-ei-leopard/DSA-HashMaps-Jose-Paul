@@ -35,3 +35,14 @@ main();
 
 // retreiving values by their keys, 
 // although the keys have the same value, so the value of the key was replaced
+
+
+// drill 3
+
+// OPEN ADDRESSING
+const testArray = [22, 88, n2, 4, 15, 28, 17, 59, 31, 10, n10] 
+
+// SEPARATE CHAINING
+
+const testArray2 = [33, [12, 10], n2, 15, 5, [28, 17], n6, 19, 20] // modded by 11 instead of 9 by accident
+
