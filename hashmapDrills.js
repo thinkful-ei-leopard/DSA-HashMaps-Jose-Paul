@@ -66,4 +66,16 @@ function removeDuplicates(string) {
 // complexity O(n^2)
 console.log(removeDuplicates('google this is a test'));
 
+// PALINDROMES
 
+function palindrome(string) {
+  let newMap = new HashMap();
+
+  for (let i = 0; i < string.length; i++) {
+    let char = string[i];
+    newMap.set(char, char);
+  }
+  console.log(newMap)
+}
+
+console.log(palindrome('acecarr'));
